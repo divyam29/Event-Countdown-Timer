@@ -1,14 +1,14 @@
-
 from datetime import datetime
-from flask import Flask, abort, redirect, render_template, request
+from flask import Flask, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import os
-from sqlalchemy.exc import IntegrityError, OperationalError
+from sqlalchemy.exc import IntegrityError
 from flask_login import LoginManager, login_user, logout_user
 from flask_login import UserMixin
 from flask_login import login_required, current_user
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+# This gives us the base directory of our project which can be used to set path 
 
 app = Flask(__name__)
 local_server = True
