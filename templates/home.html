@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Countdown-Home</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-    <link rel="stylesheet" href="../static/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/css/home.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'bootstrap/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'css/home.css')}}">
 </head>
 
 <body>
@@ -22,28 +22,43 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="index.html">Event</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="signup.html">SignUp</a></li>
-                    <li><a href="createEvent.html">CreateEvent</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/timer">Event</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">SignUp</a></li>
+                    <li><a href="/event">CreateEvent</a></li>
+                    <li><a href="/logout">Logout</a></li>
                 </ul>
             </div>
         </nav>
     </header>
+    <center>
+        <h3 class="card_title title-white">Welcome {{uname}}</h3>
+    </center>
+    <div class="cards-list mt-3">
 
-    <div class="cards-list mt-5">
-
-        <div class="card 1">
-            <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
-            <div class="card_title title-white">
-                <p>Card Title</p>
+        {% if event_name %}
+            {% for eventName in event_name %}
+            <a href="/timer/{{user_id}}/{{eventName}}" style="text-decoration:none;">
+            <div class="card 1">
+                <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+                <div class="card_title title-white">
+                    <p style="text-decoration:none;">{{eventName}}</p>
+                </div>
             </div>
-        </div>
+            </a>
+            {% endfor %}
+            
+        {% else %}
+        <center>
+            <h3 class="card_title title-white">No Events to show....</h3>
+        </center>
 
-        <div class="card 2">
+        {% endif %}
+
+        <!-- <div class="card 2">
             <div class="card_image">
-                <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" />
+                <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
             </div>
             <div class="card_title title-white">
                 <p>Card Title</p>
@@ -52,21 +67,21 @@
 
         <div class="card 3">
             <div class="card_image">
-                <img src="https://media.giphy.com/media/10SvWCbt1ytWCc/giphy.gif" />
+                <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
             </div>
-            <div class="card_title">
+            <div class="card_title title-white">
                 <p>Card Title</p>
             </div>
         </div>
 
         <div class="card 4">
             <div class="card_image">
-                <img src="https://media.giphy.com/media/LwIyvaNcnzsD6/giphy.gif" />
+                <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
             </div>
-            <div class="card_title title-black">
+            <div class="card_title title-white">
                 <p>Card Title</p>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </body>

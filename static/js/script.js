@@ -1,3 +1,11 @@
+
+function eventDate() {
+    console.log(edate);
+    return edate
+}
+
+console.log(edate);
+
 const countDownClock = (number = 100, format = 'seconds') => {
 
     const d = document;
@@ -54,7 +62,7 @@ var yyyy = today.getFullYear();
 
 today = mm + '/' + dd + '/' + yyyy;
 
-const date1 = new Date('9/3/2022');
+const date1 = new Date(edate);
 const date2 = new Date(today);
 // console.log(date1);
 // console.log(date2);

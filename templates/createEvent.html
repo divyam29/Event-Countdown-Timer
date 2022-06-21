@@ -4,9 +4,9 @@
         <title>
             Event Countdown-Create Event
         </title>
-        <link rel="stylesheet" href="../static/css/login.css">
-        <link rel="stylesheet" href="../static/css/style.css">
-        <link rel="stylesheet" href="../static/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ url_for('static',filename= 'css/login.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static',filename= 'css/style.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static',filename= 'bootstrap/bootstrap.min.css')}}">
     </head>
     <body>
         <header>
@@ -19,18 +19,19 @@
                 </div>
                 <div class="menu">
                     <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="index.html">Event</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="signup.html">SignUp</a></li>
-                        <li><a href="createEvent.html">CreateEvent</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/timer">Event</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/signup">SignUp</a></li>
+                        <li><a href="/event">CreateEvent</a></li>
+                        <li><a href="/logout">Logout</a></li>
                     </ul>
                 </div>
             </nav>
         </header>
         <center>
         <div class="form">
-            <form>
+            <form action="/event" method="post" >
                 <p class="heading">Add Event</p>
                 <div class="enter">
                     <input type="text" name="ename" placeholder="Event Name" required>
@@ -57,6 +58,6 @@
             </form>
         </div>
         </center>
-        <script src="../static/js/script.js"></script>
+        <script src="{{ url_for('static',filename= 'js/script.js')}}"></script>
     </body>
 </html>
