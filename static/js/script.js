@@ -77,4 +77,4 @@ function getDifferenceInDays(date2, date1) {
   enter number and format
   days, hours, minutes or seconds
 */
-countDownClock(getDifferenceInDays(date1, date2), 'days');
+countDownClock(getDifferenceInDays(date2, date1), 'days');
