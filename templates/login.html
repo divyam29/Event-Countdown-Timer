@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Event Countdown-Login
-        </title>
-        <link rel="stylesheet" href="{{ url_for('static',filename= 'css/login.css')}}">
-        <link rel="stylesheet" href="{{ url_for('static',filename= 'css/style.css')}}">
-        <link rel="stylesheet" href="{{ url_for('static',filename= 'bootstrap/bootstrap.min.css')}}">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="menu-icon">
-                    <i class="fa fa-bars fa-2x"></i>
-                </div>
-                <div class="logo">
-                    Countdown
-                </div>
-                <div class="menu">
-                    <ul>
-                        <!-- <li><a href="/">Home</a></li> -->
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/signup">SignUp</a></li>
-                        <!-- <li><a href="/event">CreateEvent</a></li>
+
+<head>
+    <title>
+        Event Countdown-Login
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'css/login.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'css/style.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename= 'bootstrap/bootstrap.min.css')}}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">
+                Countdown
+            </div>
+            <div class="menu">
+                <ul>
+                    <!-- <li><a href="/">Home</a></li> -->
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/signup">SignUp</a></li>
+                    <!-- <li><a href="/event">CreateEvent</a></li>
                         <li><a href="/logout">Logout</a></li> -->
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <center>
-        <div class="form" >
+                </ul>
+            </div>
+        </nav>
+    </header>
+    {% if message %}
+    <div class="alert alert-dark alert-dismissible fade show mx-4" role="alert">
+        <strong>{{message}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endif %}
+    <center>
+        <div class="form">
             <form action="/login" method="post">
                 <p class="heading">LOGIN</p>
                 <div class="enter">
@@ -41,7 +50,7 @@
                 <br>
                 <br>
                 <div class="submit">
-                    <input type="submit" class="Signup" name="login" value="Sign Up" placeholder="Signup">
+                    <input id="btn" type="submit" class="Signup" name="login" value="Sign Up" placeholder="Signup">
                 </div>
                 <br>
                 <!-- <div class="check">
@@ -56,6 +65,9 @@
                 </div>
             </form>
         </div>
-        </center>
-    </body>
+    </center>
+
+    <script src="{{ url_for('static',filename= 'bootstrap/bootstrap.min.js')}}"></script>
+</body>
+
 </html>

@@ -34,28 +34,29 @@
     <center>
         <h3 class="card_title title-white">Welcome {{uname}}</h3>
     </center>
-    <div class="cards-list mt-3">
+    <center>
+        <div class="cards-list mt-3">
 
-        {% if event_name %}
+            {% if event_name %}
             {% for eventName in event_name %}
             <a href="/timer/{{user_id}}/{{eventName}}" style="text-decoration:none;">
-            <div class="card 1">
-                <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
-                <div class="card_title title-white">
-                    <p style="text-decoration:none;">{{eventName.upper()}}</p>
+                <div class="card 1">
+                    <div class="card_image"> <img src="https://i.redd.it/b3esnz5ra34y.jpg" /> </div>
+                    <div class="card_title title-white">
+                        <p style="text-decoration:none;">{{eventName.upper()}}</p>
+                    </div>
                 </div>
-            </div>
             </a>
             {% endfor %}
-            
-        {% else %}
-        <center>
-            <h3 class="card_title title-white">No Events to show....</h3>
-        </center>
 
-        {% endif %}
+            {% else %}
+            <center>
+                <h3 class="card_title title-white">No Events to show....</h3>
+            </center>
 
-        <!-- <div class="card 2">
+            {% endif %}
+
+            <!-- <div class="card 2">
             <div class="card_image">
                 <img src="https://i.redd.it/b3esnz5ra34y.jpg" />
             </div>
@@ -82,7 +83,8 @@
             </div>
         </div> -->
 
-    </div>
+        </div>
+    </center>
 </body>
 
 </html>

@@ -26,7 +26,7 @@ html {
 }
 
 body {
-    background: url('../assets/bg.jpg') no-repeat center center / cover;
+    background: url('../assets/bg.jpg') repeat-y center center / cover;
 }
 
 .countdown-container {

@@ -1,4 +1,5 @@
 from datetime import datetime
+from email import message
 from flask import Flask, redirect, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -132,7 +133,7 @@ def login():
             pword = request.form.get('pword')
             user1 = User.query.filter_by(uname=uname).first()
             if not user1 or pword != user1.passwd:
-                return render_template("login.html")
+                return render_template("login.html",message="Username or Password Incorrect!!")
             login_user(user1, remember=False)
             # This sets the logged in user as the current user using flask-login
             return redirect("/")
