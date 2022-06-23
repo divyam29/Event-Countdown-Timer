@@ -62,7 +62,6 @@ class Event(db.Model):
 
 # This creates the tables referencing to the Models created in database.db file
 
-
 @app.route("/")
 @login_required
 # using flask-login we can use login_required
